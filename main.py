@@ -3,12 +3,13 @@
 print ('strating')
 
 day = 0
-comp_money = [1000]
+flag = 0
+comp_money = [10000]
 salary = 10
-happiness = 1
-quality = 0
+happiness = 0
+quality = 1
 def worker_happiness(salary):
-    happiness = salary /10
+    happiness = salary /9
     return happiness
 
 def costumer(happy):
@@ -17,7 +18,7 @@ def costumer(happy):
     # else:
     #     pay = happy*2.5
 
-    pay= 10/happy
+    pay= ((happy/10)-0.05)*100
 
     return pay
 
@@ -26,7 +27,10 @@ def product(worker_happiness):
     return quality
 
 
+
+
 for day in range(0,100):
+    flag = flag + 1
 
     if comp_money[-1] <= 0:
         print("No more money!")
@@ -34,18 +38,25 @@ for day in range(0,100):
 
     # if (comp_money - salary )> 0:
     if day > 10:
+
         num_da_media = []
         media = 0
         for i in range(1,10):
 
 
             num_da_media.append(comp_money[-i] - comp_money[-i-1])
-            print(num_da_media[-1])
+            # print(num_da_media[-1])
 
         media = sum(num_da_media)/len(num_da_media)
-        if media < 0:
-            salary += 1
-    #
+        print(media)
+        # if media < 0:
+        #     salary += 1
+
+        if flag >= 5:
+            if media < 0:
+                salary += 5
+            flag = 0
+
     # try:
     #     print(media)
     # except:
