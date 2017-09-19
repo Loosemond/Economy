@@ -50,13 +50,13 @@ for day in range(0,100):
 
         media = sum(num_da_media)/len(num_da_media)
         print(media)
-        # if media < 0:
-        #     salary += 1
+        if media < 0:
+            salary += 1
 
-        if flag >= 5:
-            if media < 0:
-                salary += 5
-            flag = 0
+        # if flag >= 5:
+        #     if media < 0:
+        #         salary += 5
+        #     flag = 0
 
     # try:
     #     print(media)
