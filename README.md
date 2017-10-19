@@ -1,2 +1,2 @@
 # Economy
-its just a projetc for me learn python
+its just a project for me learn python
